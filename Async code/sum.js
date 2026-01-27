@@ -1,9 +1,12 @@
 const sumRequestHandler=(req,res)=>{
+    console.log('1.Before Sending request');
     const body = [];
     req.on('data', (chunk) => {
         body.push(chunk);
+        console.log(`2. Chunk came`);
     });
     req.on('end', () => {
+        console.log(`3. Chunk coming ended`);
         res.setHeader('Content-Type', 'text/html');
         const fullBody = Buffer.concat(body).toString();
         const params = new URLSearchParams(fullBody);
@@ -24,6 +27,7 @@ const sumRequestHandler=(req,res)=>{
             `);
         return res.end();
     });
+    console.log('4. After response sending');
 }
 
 module.exports=sumRequestHandler;

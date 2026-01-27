@@ -11,7 +11,7 @@ const requestHandler=(req,res)=>{
             </head>
             <body>
                 <h1><center>Welcome To the Calculator Project</center></h1>
-                <h2><a href="/calculator">Go To My Calculator</a></h2>
+                <h2><a href="/calculator">Go To Calculator</a></h2>
             </body>
         </html>`
         );
